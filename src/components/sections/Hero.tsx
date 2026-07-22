@@ -26,10 +26,10 @@ export default function Hero() {
   return (
     <section
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-visible"
     >
       {/* Background ambient elements */}
-      <div className="absolute inset-0 -z-10">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
         {/* Subtle grid */}
         <div className="absolute inset-0 grid-pattern opacity-[0.03]" />
 
@@ -66,7 +66,7 @@ export default function Hero() {
             <p className="text-accent text-sm tracking-[0.2em] uppercase mb-4 font-medium">
               Graphic Designer & Animator
             </p>
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95] text-balance">
+            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.0] text-balance">
               Shanith{" "}
               <span className="block text-gradient">Dhanuja</span>
             </h1>
