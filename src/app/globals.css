@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0b0b0b;
+  --color-surface: #151515;
+  --color-surface-light: #1e1e1e;
+  --color-border: #2a2a2a;
+  --color-text: #ffffff;
+  --color-text-secondary: #a8a8a8;
+  --color-text-muted: #6b6b6b;
+  --color-accent: #ff6b35;
+  --color-accent-hover: #ff8555;
+
+  --font-sans: "Inter", "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Satoshi", ui-sans-serif, system-ui,
+    sans-serif;
+}
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 3px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: var(--color-background);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .text-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--color-text) 0%,
+      var(--color-text-secondary) 50%,
+      var(--color-accent) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(21, 21, 21, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 40px rgba(255, 107, 53, 0.15),
+      0 0 80px rgba(255, 107, 53, 0.05);
+  }
+
+  .grid-pattern {
+    background-image: linear-gradient(
+        var(--color-border) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, var(--color-border) 1px, transparent 1px);
+    background-size: 60px 60px;
+    background-position: center center;
+  }
+}
